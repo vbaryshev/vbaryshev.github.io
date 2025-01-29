@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Обновленное Портфолио Исследователя</title>
-  <!-- Google Fonts -->
+  <title>Минималистичное Портфолио Исследователя</title>
+  <!-- Google Fonts (по желанию) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link 
@@ -22,18 +22,19 @@
     body {
       font-family: 'Work Sans', Arial, sans-serif;
       color: #333;
-      background-color: #f7f9fa;
+      background: #fafafa;
       line-height: 1.6;
       scroll-behavior: smooth; /* Плавный скролл по якорям */
     }
 
     a {
       text-decoration: none;
-      color: #009688;
+      color: #333;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
     a:hover {
-      color: #00796b;
+      color: #555;
     }
 
     /* КОНТЕЙНЕР ДЛЯ ВЫРАВНИВАНИЯ */
@@ -49,8 +50,8 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      background-color: #ffffff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
     }
 
     /* ВЕРХНЯЯ ПАНЕЛЬ НАВИГАЦИИ */
@@ -62,9 +63,9 @@
     }
 
     .logo {
-      font-size: 1.4em;
+      font-size: 1.2em;
       font-weight: 600;
-      color: #009688;
+      color: #333;
     }
 
     nav ul {
@@ -76,10 +77,9 @@
     nav li a {
       font-weight: 400;
       color: #333;
-      transition: color 0.3s;
     }
     nav li a:hover {
-      color: #009688;
+      color: #555;
     }
 
     /* БУРГЕР-МЕНЮ (АДАПТИВ) */
@@ -101,11 +101,11 @@
         position: absolute;
         top: 60px;
         right: 20px;
-        background: #ffffff;
+        background: #fff;
         flex-direction: column;
-        border-radius: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
         padding: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         opacity: 0;
         visibility: hidden;
         transform: translateY(-10px);
@@ -126,18 +126,18 @@
 
     /* HERO (ПРИВЕТСТВЕННЫЙ БЛОК) */
     .hero {
-      background: linear-gradient(120deg, #009688, #4db6ac);
-      color: #ffffff;
-      padding: 70px 20px;
+      background: #f0f0f0;
+      color: #333;
+      padding: 60px 20px;
       text-align: center;
     }
     .hero h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       margin-bottom: 15px;
       font-weight: 600;
     }
     .hero p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.4;
@@ -146,17 +146,15 @@
     /* РАЗДЕЛЫ (section) */
     section {
       margin: 40px 0;
-      background-color: #ffffff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      background-color: #fff;
       padding: 30px;
     }
     section h2 {
-      font-size: 1.8em;
-      color: #009688;
+      font-size: 1.6em;
       margin-bottom: 20px;
-      border-bottom: 2px solid #009688;
-      padding-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ddd;
+      font-weight: 600;
     }
 
     /* ОБО МНЕ */
@@ -171,19 +169,19 @@
       gap: 20px;
     }
     .card {
-      background-color: #f7f9fa;
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
+      background-color: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 4px;
       padding: 20px;
-      transition: box-shadow 0.3s ease;
+      transition: background-color 0.3s ease;
     }
     .card:hover {
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background-color: #f5f5f5;
     }
     .card-title {
-      font-size: 1.2em;
+      font-size: 1.1em;
       margin-bottom: 8px;
-      color: #009688;
+      font-weight: 600;
     }
     .card-desc {
       font-size: 0.95em;
@@ -193,6 +191,7 @@
     .resume-list {
       list-style: none;
       margin-left: 0;
+      padding-left: 0;
     }
     .resume-list li {
       margin-bottom: 8px;
@@ -208,57 +207,67 @@
     .contact-form textarea {
       width: 100%;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 4px;
       padding: 10px;
       margin-bottom: 15px;
       font-size: 1em;
       font-family: inherit;
     }
     .contact-form button {
-      background-color: #009688;
+      background-color: #333;
       color: #fff;
       border: none;
       padding: 12px 24px;
       font-size: 1em;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
     .contact-form button:hover {
-      background-color: #00796b;
+      background-color: #555;
     }
 
     /* FOOTER */
     footer {
-      background-color: #ffffff;
-      border-top: 2px solid #009688;
+      background-color: #fff;
+      border-top: 1px solid #ddd;
       text-align: center;
       padding: 20px;
-      color: #555;
+      color: #666;
       font-size: 0.9em;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
     }
 
-    /* АНИМАЦИИ + КНОПКА НАВЕРХ (пример, если контент длинный) */
+    /* КНОПКА "НАВЕРХ" */
     .to-top {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #009688;
+      background-color: #333;
       color: #fff;
-      padding: 12px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       cursor: pointer;
       display: none;
       align-items: center;
       justify-content: center;
-      transition: opacity 0.3s;
+      transition: background-color 0.3s ease;
     }
     .to-top.show {
       display: flex;
     }
     .to-top:hover {
-      background-color: #00796b;
+      background-color: #555;
+    }
+
+    /* ПОДКАСТЫ (дополнительные стили, если нужно) */
+    .podcast-item {
+      margin-bottom: 20px;
+    }
+    .podcast-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -275,6 +284,8 @@
           <li><a href="#publications">Публикации</a></li>
           <li><a href="#projects">Проекты</a></li>
           <li><a href="#resume">Навыки</a></li>
+          <!-- Добавляем ссылку на подкасты -->
+          <li><a href="#podcasts">Подкасты</a></li>
           <li><a href="#contact">Контакты</a></li>
         </ul>
       </nav>
@@ -290,15 +301,15 @@
   <section class="hero" id="hero">
     <div class="container">
       <h1>Добро пожаловать!</h1>
-      <p>Исследователь и ученый, увлеченный научными открытиями и новыми технологиями. Здесь вы найдете мои публикации, проекты и способы связи со мной.</p>
+      <p>Исследователь и ученый, увлеченный наукой и новыми технологиями. Здесь вы найдете мои публикации, проекты и способы связи со мной.</p>
     </div>
   </section>
 
   <!-- ОБО МНЕ -->
   <section id="about" class="about container">
     <h2>Обо мне</h2>
-    <p>Краткое описание научных интересов, профессиональной подготовки, опыта работы. Можно упомянуть университеты, в которых вы обучались, и ключевые научные результаты. Сделайте акцент на том, что вас мотивирует в науке и исследованиях.</p>
-    <p>Можно также добавить несколько достижений: например, награды, гранты, признания экспертных сообществ, заметные публикации.</p>
+    <p>Краткое описание научного профиля, основных интересов и достижений. Можно упомянуть университеты, проекты или ключевые итоги ваших исследований.</p>
+    <p>Дополнительно можно вывести награды, гранты, признания экспертного сообщества.</p>
   </section>
 
   <!-- ПУБЛИКАЦИИ -->
@@ -342,13 +353,52 @@
   <!-- НАВЫКИ, ДОП. РАЗДЕЛ (пример) -->
   <section id="resume" class="container">
     <h2>Навыки и достижения</h2>
-    <p>Можно перечислить технические навыки, языки программирования, пакеты для научных вычислений и др.</p>
+    <p>Перечислите технические и научные навыки, языки программирования, важные награды и гранты.</p>
     <ul class="resume-list">
       <li>Python, R, MATLAB, Julia</li>
       <li>Machine Learning, Data Analysis, Big Data</li>
       <li>Грант на исследования от ...</li>
       <li>Победа в научном конкурсе ...</li>
     </ul>
+  </section>
+
+  <!-- ПОДКАСТЫ (АУДИО/ВИДЕО) -->
+  <section id="podcasts" class="container">
+    <h2>Подкасты</h2>
+    <p>Ниже можно разместить ваши аудио- и видеоподкасты (например, интервью или лекции).</p>
+
+    <!-- Пример аудио-подкаста -->
+    <div class="podcast-item">
+      <h3>Аудиоподкаст #1</h3>
+      <audio controls>
+        <source src="audio/podcast1.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает элемент <code>audio</code>.
+      </audio>
+    </div>
+
+    <!-- Пример видеоподкаста -->
+    <div class="podcast-item">
+      <h3>Видеоподкаст #1</h3>
+      <video controls width="400" height="250">
+        <source src="video/podcast1.mp4" type="video/mp4">
+        Ваш браузер не поддерживает элемент <code>video</code>.
+      </video>
+    </div>
+
+    <!-- Если хотите встраивать видео с Youtube, можно использовать iframe -->
+    <!--
+    <div class="podcast-item">
+      <h3>Видео с YouTube</h3>
+      <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/ВАШ_ID_РОЛИКА" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    -->
   </section>
 
   <!-- КОНТАКТЫ -->
