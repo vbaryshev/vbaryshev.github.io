@@ -2,17 +2,17 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Портфолио Исследователя</title>
-  <!-- Подключаем шрифт Google Fonts (пример — Work Sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Обновленное Портфолио Исследователя</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link 
     href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" 
-    rel="stylesheet"
-  >
+    rel="stylesheet" 
+  />
   <style>
-    /* Базовые стили */
+    /* СБРОС И БАЗОВЫЕ СТИЛИ */
     * {
       margin: 0;
       padding: 0;
@@ -21,71 +21,10 @@
 
     body {
       font-family: 'Work Sans', Arial, sans-serif;
-      background-color: #f7f9fa; /* Светлый фон */
       color: #333;
+      background-color: #f7f9fa;
       line-height: 1.6;
-    }
-
-    /* Контейнер ограничивает ширину и центрирует контент */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    header {
-      background-color: #ffffff;
-      border-bottom: 2px solid #009688; /* Акцентная линия в хедере */
-      padding: 20px 0;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Лёгкая тень */
-    }
-
-    header h1 {
-      font-weight: 600;
-      font-size: 2em;
-      color: #009688; /* Акцентный цвет */
-      text-align: center;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      text-align: center;
-      color: #555;
-      font-size: 1em;
-    }
-
-    /* Общие стили для секций */
-    section {
-      background-color: #ffffff;
-      margin-bottom: 20px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    section h2 {
-      font-size: 1.6em;
-      margin-bottom: 10px;
-      color: #009688;
-      border-bottom: 2px solid #009688;
-      padding-bottom: 6px;
-    }
-
-    section p, li {
-      font-size: 1em;
-      margin-bottom: 10px;
-      color: #333;
-    }
-
-    /* Списки */
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li:not(:last-child) {
-      margin-bottom: 8px;
+      scroll-behavior: smooth; /* Плавный скролл по якорям */
     }
 
     a {
@@ -94,79 +33,375 @@
       font-weight: 600;
     }
     a:hover {
-      color: #00796b; /* Немного более тёмный оттенок при наведении */
+      color: #00796b;
     }
 
+    /* КОНТЕЙНЕР ДЛЯ ВЫРАВНИВАНИЯ */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ШАПКА (HEADER) */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* ВЕРХНЯЯ ПАНЕЛЬ НАВИГАЦИИ */
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .logo {
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #009688;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav li a {
+      font-weight: 400;
+      color: #333;
+      transition: color 0.3s;
+    }
+    nav li a:hover {
+      color: #009688;
+    }
+
+    /* БУРГЕР-МЕНЮ (АДАПТИВ) */
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .burger span {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #ffffff;
+        flex-direction: column;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+      }
+      nav ul.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      .burger {
+        display: flex;
+      }
+    }
+
+    /* HERO (ПРИВЕТСТВЕННЫЙ БЛОК) */
+    .hero {
+      background: linear-gradient(120deg, #009688, #4db6ac);
+      color: #ffffff;
+      padding: 70px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .hero p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    /* РАЗДЕЛЫ (section) */
+    section {
+      margin: 40px 0;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      padding: 30px;
+    }
+    section h2 {
+      font-size: 1.8em;
+      color: #009688;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #009688;
+      padding-bottom: 10px;
+    }
+
+    /* ОБО МНЕ */
+    .about p {
+      margin-bottom: 15px;
+    }
+
+    /* КАРТОЧКИ (для проектов / статей) */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background-color: #f7f9fa;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      transition: box-shadow 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card-title {
+      font-size: 1.2em;
+      margin-bottom: 8px;
+      color: #009688;
+    }
+    .card-desc {
+      font-size: 0.95em;
+    }
+
+    /* РЕЗЮМЕ (дополнительная секция - навыки, достижения...) */
+    .resume-list {
+      list-style: none;
+      margin-left: 0;
+    }
+    .resume-list li {
+      margin-bottom: 8px;
+    }
+
+    /* ФОРМА КОНТАКТОВ */
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 1em;
+      font-family: inherit;
+    }
+    .contact-form button {
+      background-color: #009688;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: #00796b;
+    }
+
+    /* FOOTER */
     footer {
       background-color: #ffffff;
-      border-top: 2px solid #009688; /* Акцентная линия в футере */
-      padding: 20px;
+      border-top: 2px solid #009688;
       text-align: center;
-      font-size: 0.9em;
+      padding: 20px;
       color: #555;
+      font-size: 0.9em;
       box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
     }
 
-    /* RWD: стили для небольших экранов */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8em;
-      }
-      section h2 {
-        font-size: 1.4em;
-      }
+    /* АНИМАЦИИ + КНОПКА НАВЕРХ (пример, если контент длинный) */
+    .to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #009688;
+      color: #fff;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s;
+    }
+    .to-top.show {
+      display: flex;
+    }
+    .to-top:hover {
+      background-color: #00796b;
     }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header>
-    <div class="container">
-      <h1>Ваше Имя</h1>
-      <p>Исследователь / Ученый / Аналитик</p>
+    <div class="container nav-wrapper">
+      <div class="logo">Моё Портфолио</div>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#hero">Главная</a></li>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#publications">Публикации</a></li>
+          <li><a href="#projects">Проекты</a></li>
+          <li><a href="#resume">Навыки</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="burger" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    
-    <!-- О себе -->
-    <section>
-      <h2>Обо мне</h2>
-      <p>Небольшой текст о ваших исследовательских интересах, опыте работы и образовании. Например, укажите, в каких областях вы специализируетесь, какие у вас научные достижения и что вас вдохновляет в вашей деятельности.</p>
-    </section>
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <h1>Добро пожаловать!</h1>
+      <p>Исследователь и ученый, увлеченный научными открытиями и новыми технологиями. Здесь вы найдете мои публикации, проекты и способы связи со мной.</p>
+    </div>
+  </section>
 
-    <!-- Публикации -->
-    <section>
-      <h2>Публикации</h2>
-      <ul>
-        <li><a href="#">Название статьи 1</a> — краткое описание</li>
-        <li><a href="#">Название статьи 2</a> — краткое описание</li>
-        <li><a href="#">Название статьи 3</a> — краткое описание</li>
-      </ul>
-    </section>
+  <!-- ОБО МНЕ -->
+  <section id="about" class="about container">
+    <h2>Обо мне</h2>
+    <p>Краткое описание научных интересов, профессиональной подготовки, опыта работы. Можно упомянуть университеты, в которых вы обучались, и ключевые научные результаты. Сделайте акцент на том, что вас мотивирует в науке и исследованиях.</p>
+    <p>Можно также добавить несколько достижений: например, награды, гранты, признания экспертных сообществ, заметные публикации.</p>
+  </section>
 
-    <!-- Проекты -->
-    <section>
-      <h2>Проекты</h2>
-      <ul>
-        <li><a href="#">Исследовательский проект 1</a> — краткое описание</li>
-        <li><a href="#">Исследовательский проект 2</a> — краткое описание</li>
-        <li><a href="#">Исследовательский проект 3</a> — краткое описание</li>
-      </ul>
-    </section>
+  <!-- ПУБЛИКАЦИИ -->
+  <section id="publications" class="container">
+    <h2>Публикации</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Название статьи 1</div>
+        <div class="card-desc">Краткое описание содержания статьи, основные выводы и вклад в науку.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Название статьи 2</div>
+        <div class="card-desc">Краткое описание содержания статьи, основные выводы и вклад в науку.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Название статьи 3</div>
+        <div class="card-desc">Краткое описание содержания статьи, основные выводы и вклад в науку.</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Контакты -->
-    <section>
-      <h2>Контакты</h2>
-      <p>Email: <a href="mailto:ваш_email@example.com">ваш_email@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/ваш-профиль" target="_blank">linkedin.com/in/ваш-профиль</a></p>
-    </section>
+  <!-- ПРОЕКТЫ -->
+  <section id="projects" class="container">
+    <h2>Проекты</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-title">Исследовательский проект 1</div>
+        <div class="card-desc">Описание задачи, методов исследования и полученных результатов. Можно добавить ссылки на GitHub или другие репозитории.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Исследовательский проект 2</div>
+        <div class="card-desc">Описание задачи, методов исследования и полученных результатов. Можно добавить ссылки на GitHub или другие репозитории.</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Исследовательский проект 3</div>
+        <div class="card-desc">Описание задачи, методов исследования и полученных результатов. Можно добавить ссылки на GitHub или другие репозитории.</div>
+      </div>
+    </div>
+  </section>
 
-  </main>
+  <!-- НАВЫКИ, ДОП. РАЗДЕЛ (пример) -->
+  <section id="resume" class="container">
+    <h2>Навыки и достижения</h2>
+    <p>Можно перечислить технические навыки, языки программирования, пакеты для научных вычислений и др.</p>
+    <ul class="resume-list">
+      <li>Python, R, MATLAB, Julia</li>
+      <li>Machine Learning, Data Analysis, Big Data</li>
+      <li>Грант на исследования от ...</li>
+      <li>Победа в научном конкурсе ...</li>
+    </ul>
+  </section>
 
+  <!-- КОНТАКТЫ -->
+  <section id="contact" class="container">
+    <h2>Контакты</h2>
+    <p>Оставьте сообщение через форму или свяжитесь со мной по Email / LinkedIn.</p>
+    <div class="contact-form">
+      <form action="#" method="POST">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" placeholder="Ваше имя" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Ваш Email" required />
+
+        <label for="message">Сообщение</label>
+        <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение"></textarea>
+
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2023 Ваше Имя. Все права защищены.</p>
   </footer>
+
+  <!-- КНОПКА "НАВЕРХ" -->
+  <div class="to-top" id="toTop">&#8679;</div>
+
+  <!-- JS-ДЛЯ-БУРГЕР-МЕНЮ И КНОПКИ "НАВЕРХ" -->
+  <script>
+    // Бургер-меню
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('nav-menu');
+
+    burger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Кнопка "Наверх"
+    const toTopBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        toTopBtn.classList.add('show');
+      } else {
+        toTopBtn.classList.remove('show');
+      }
+    });
+    toTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 
 </body>
 </html>
