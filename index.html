@@ -1,109 +1,172 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Исследователь - Ваше Имя</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff; /* Белый фон */
-            color: #333;
-        }
-        header {
-            background: #ffffff; /* Белый фон для заголовка */
-            color: #333;
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid #2980b9; /* Нежное подчеркивание */
-        }
-        h1 {
-            margin: 0;
-            font-size: 2.5em;
-            font-weight: bold;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        section {
-            margin: 20px 0;
-            background: #ffffff; /* Белый фон для секций */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Легкая тень */
-        }
-        h2 {
-            color: #2980b9; /* Синий цвет для заголовков секций */
-            border-bottom: 2px solid #2980b9; /* Подчеркивание */
-            padding-bottom: 10px;
-            font-size: 1.8em; /* Увеличенный размер заголовка */
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 15px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #2980b9; /* Цвет ссылок */
-            font-weight: bold;
-        }
-        a:hover {
-            color: #e74c3c; /* Цвет ссылок при наведении */
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background: #ffffff; /* Белый фон для подвала */
-            color: #333;
-            border-top: 2px solid #2980b9; /* Нежное подчеркивание */
-            box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* Легкая тень */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио Исследователя</title>
+  <!-- Подключаем шрифт Google Fonts (пример — Work Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600&display=swap" 
+    rel="stylesheet"
+  >
+  <style>
+    /* Базовые стили */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Work Sans', Arial, sans-serif;
+      background-color: #f7f9fa; /* Светлый фон */
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Контейнер ограничивает ширину и центрирует контент */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 2px solid #009688; /* Акцентная линия в хедере */
+      padding: 20px 0;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Лёгкая тень */
+    }
+
+    header h1 {
+      font-weight: 600;
+      font-size: 2em;
+      color: #009688; /* Акцентный цвет */
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      text-align: center;
+      color: #555;
+      font-size: 1em;
+    }
+
+    /* Общие стили для секций */
+    section {
+      background-color: #ffffff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    section h2 {
+      font-size: 1.6em;
+      margin-bottom: 10px;
+      color: #009688;
+      border-bottom: 2px solid #009688;
+      padding-bottom: 6px;
+    }
+
+    section p, li {
+      font-size: 1em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    /* Списки */
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #009688;
+      font-weight: 600;
+    }
+    a:hover {
+      color: #00796b; /* Немного более тёмный оттенок при наведении */
+    }
+
+    footer {
+      background-color: #ffffff;
+      border-top: 2px solid #009688; /* Акцентная линия в футере */
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* RWD: стили для небольших экранов */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      section h2 {
+        font-size: 1.4em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Исследователь - Ваше Имя</h1>
-    </header>
 
+  <header>
     <div class="container">
-        <section>
-            <h2>Обо мне</h2>
-            <p>Краткая информация о вас, вашем образовании, исследовательских интересах и опыте.</p>
-        </section>
-
-        <section>
-            <h2>Публикации</h2>
-            <ul>
-                <li><a href="ссылка_на_публикацию_1">Название публикации 1</a> - Краткое описание</li>
-                <li><a href="ссылка_на_публикацию_2">Название публикации 2</a> - Краткое описание</li>
-                <li><a href="ссылка_на_публикацию_3">Название публикации 3</a> - Краткое описание</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Проекты</h2>
-            <ul>
-                <li><a href="ссылка_на_проект_1">Проект 1</a> - Краткое описание</li>
-                <li><a href="ссылка_на_проект_2">Проект 2</a> - Краткое описание</li>
-                <li><a href="ссылка_на_проект_3">Проект 3</a> - Краткое описание</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Контакты</h2>
-            <p>Email: <a href="mailto:ваш_email@example.com">ваш_email@example.com</a></p>
-        </section>
+      <h1>Ваше Имя</h1>
+      <p>Исследователь / Ученый / Аналитик</p>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2023 Ваше Имя. Все права защищены.</p>
-    </footer>
+  <main class="container">
+    
+    <!-- О себе -->
+    <section>
+      <h2>Обо мне</h2>
+      <p>Небольшой текст о ваших исследовательских интересах, опыте работы и образовании. Например, укажите, в каких областях вы специализируетесь, какие у вас научные достижения и что вас вдохновляет в вашей деятельности.</p>
+    </section>
+
+    <!-- Публикации -->
+    <section>
+      <h2>Публикации</h2>
+      <ul>
+        <li><a href="#">Название статьи 1</a> — краткое описание</li>
+        <li><a href="#">Название статьи 2</a> — краткое описание</li>
+        <li><a href="#">Название статьи 3</a> — краткое описание</li>
+      </ul>
+    </section>
+
+    <!-- Проекты -->
+    <section>
+      <h2>Проекты</h2>
+      <ul>
+        <li><a href="#">Исследовательский проект 1</a> — краткое описание</li>
+        <li><a href="#">Исследовательский проект 2</a> — краткое описание</li>
+        <li><a href="#">Исследовательский проект 3</a> — краткое описание</li>
+      </ul>
+    </section>
+
+    <!-- Контакты -->
+    <section>
+      <h2>Контакты</h2>
+      <p>Email: <a href="mailto:ваш_email@example.com">ваш_email@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/ваш-профиль" target="_blank">linkedin.com/in/ваш-профиль</a></p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Ваше Имя. Все права защищены.</p>
+  </footer>
+
 </body>
 </html>
