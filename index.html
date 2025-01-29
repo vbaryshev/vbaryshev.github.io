@@ -2,128 +2,73 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>Научное портфолио | Материалистичный дизайн</title>
-  <!-- Опционально можно подключить шрифт Material Icons и шрифт Roboto
-       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
-  -->
+  <title>Научное портфолио</title>
   <style>
-    /* 
-      -------------------------------------
-        ГЛОБАЛЬНЫЕ СТИЛИ
-      -------------------------------------
-    */
+    /* ------------------------------
+       ГЛОБАЛЬНЫЕ СТИЛИ
+    -------------------------------- */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    /* Замените при желании шрифт на Roboto, если подключили Google Fonts
-       font-family: 'Roboto', sans-serif;
-    */
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #000;
+      color: #333;
+      background: #fff;
       line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    }
+    header {
+      background: #0066cc;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
     }
     a {
+      color: #0066cc;
       text-decoration: none;
-      color: #000; /* Чёрные акценты */
     }
     a:hover {
       text-decoration: underline;
     }
-
-    /* 
-      -------------------------------------
-        ШАПКА
-      -------------------------------------
-    */
-    header {
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 20px;
-      text-align: center;
-      margin-bottom: 20px;
+    h1, h2 {
+      margin-bottom: 10px;
     }
-    header h1 {
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-    header p {
-      font-size: 16px;
-      color: #555;
-    }
-
-    /*
-      -------------------------------------
-        КОНТЕЙНЕР
-      -------------------------------------
-    */
+    /* ------------------------------
+       КОНТЕЙНЕР
+    -------------------------------- */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: 20px;
     }
-
-    /* 
-      -------------------------------------
-        ЗАГОЛОВКИ РАЗДЕЛОВ
-      -------------------------------------
-    */
-    section h2 {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 20px;
-      border-left: 4px solid #000;
-      padding-left: 10px;
-    }
-
-    /* 
-      -------------------------------------
-        ПУБЛИКАЦИИ (ФИЛЬТР, ПОИСК, КАРТОЧКИ)
-      -------------------------------------
-    */
-    #searchInput {
-      width: 100%;
-      max-width: 300px;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      outline: none;
-      transition: box-shadow 0.3s ease;
-    }
-    #searchInput:focus {
-      box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
-    }
-    
+    /* ------------------------------
+       СТИЛИ ДЛЯ КАРТОЧЕК (ПУБЛИКАЦИИ)
+    -------------------------------- */
     .filter-buttons {
       margin-bottom: 20px;
     }
     .filter-buttons button {
-      display: inline-block;
-      padding: 10px 16px;
+      padding: 8px 12px;
       margin-right: 10px;
       border: none;
-      border-radius: 4px;
-      background-color: #000; /* Чёрный акцент */
+      background-color: #0066cc;
       color: #fff;
       cursor: pointer;
-      font-weight: 500;
-      outline: none;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      transition: background-color 0.3s, box-shadow 0.3s;
+      border-radius: 4px;
     }
     .filter-buttons button:hover {
-      background-color: #333;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      background-color: #004b99;
     }
-
+    #searchInput {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      padding: 8px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
     .cards {
       display: flex;
       flex-wrap: wrap;
@@ -131,38 +76,26 @@
     }
     .card {
       flex: 1 1 300px;
-      background-color: #fff;
+      border: 1px solid #ccc;
       border-radius: 6px;
-      padding: 16px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      transition: box-shadow 0.3s;
-    }
-    .card:hover {
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      padding: 10px;
+      background: #fafafa;
     }
     .card-title {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 8px;
+      font-weight: 600;
+      margin-bottom: 5px;
     }
     .card-desc {
       color: #555;
-      font-size: 14px;
     }
-
-    /*
-      -------------------------------------
-        СЛАЙДЕР (ПРОЕКТЫ)
-      -------------------------------------
-    */
+    /* ------------------------------
+       СТИЛИ ДЛЯ СЛАЙДЕРА (ПРОЕКТЫ)
+    -------------------------------- */
     .slider {
       position: relative;
       max-width: 600px;
       margin: 0 auto 40px auto;
       overflow: hidden;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      background-color: #fff;
     }
     .slides {
       display: flex;
@@ -172,30 +105,19 @@
       min-width: 100%;
       max-width: 100%;
       display: block;
-      /* При желании добавить object-fit, если требуется обрезка */
     }
-    .prev,
-    .next {
+    .prev, .next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: #000; /* Чёрные акценты */
+      background: #333;
       color: #fff;
       border: none;
       padding: 10px;
       cursor: pointer;
       opacity: 0.7;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      outline: none;
-      transition: opacity 0.3s;
     }
-    .prev:hover,
-    .next:hover {
+    .prev:hover, .next:hover {
       opacity: 1;
     }
     .prev {
@@ -204,16 +126,13 @@
     .next {
       right: 5px;
     }
-
-    /*
-      -------------------------------------
-        ТАЙМЛАЙН
-      -------------------------------------
-    */
+    /* ------------------------------
+       СТИЛИ ДЛЯ ТАЙМЛАЙНА
+    -------------------------------- */
     .timeline {
       position: relative;
       padding-left: 20px;
-      border-left: 4px solid #000; /* Чёрный акцент */
+      border-left: 2px solid #ececec;
       margin-bottom: 40px;
     }
     .timeline .event {
@@ -221,71 +140,44 @@
       margin-bottom: 20px;
     }
     .timeline .event .date {
-      font-weight: 500;
+      font-weight: 600;
       margin-bottom: 5px;
-      font-size: 14px;
-      color: #000;
+      color: #333;
     }
     .timeline .event .content {
-      background: #fff;
-      padding: 12px;
+      background: #f9f9f9;
+      padding: 10px;
       border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      font-size: 14px;
-      color: #555;
+      border: 1px solid #ececec;
     }
-
-    /*
-      -------------------------------------
-        КНОПКА СКАЧИВАНИЯ
-      -------------------------------------
-    */
+    /* ------------------------------
+       КНОПКА СКАЧИВАНИЯ
+    -------------------------------- */
     .download-btn {
       display: inline-block;
-      background-color: #000; /* Чёрный акцент */
+      background-color: #0066cc;
       color: #fff;
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 4px;
-      font-weight: 500;
-      transition: background-color 0.3s, box-shadow 0.3s;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      font-weight: 600;
+      transition: background-color 0.3s;
     }
     .download-btn:hover {
-      background-color: #333;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      background-color: #004b99;
     }
-
-    /*
-      -------------------------------------
-        КОНТАКТЫ
-      -------------------------------------
-    */
-    #contacts p {
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    /*
-      -------------------------------------
-        ФУТЕР
-      -------------------------------------
-    */
+    /* ------------------------------
+       ФУТЕР
+    -------------------------------- */
     footer {
-      background-color: #fff;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
-      color: #555;
+      background: #333;
+      color: #fff;
       text-align: center;
       padding: 10px;
-      margin-top: 40px;
-    }
-    footer p {
-      font-size: 14px;
     }
   </style>
 </head>
 <body>
-
   <!-- ШАПКА -->
   <header>
     <h1>Моё научное портфолио</h1>
@@ -298,7 +190,7 @@
     <section id="publications">
       <h2>Публикации</h2>
 
-      <!-- Поле поиска -->
+      <!-- Строка поиска -->
       <input
         type="text"
         id="searchInput"
@@ -339,6 +231,8 @@
             Описание математического исследования, уравнения и теоремы.
           </div>
         </div>
+
+        <!-- Добавьте ещё карточки по мере необходимости -->
       </div>
     </section>
 
@@ -348,7 +242,7 @@
       <p>Расскажите о том, над чем вы сейчас работаете.</p>
       <div class="slider">
         <div class="slides">
-          <!-- Замените на свои изображения -->
+          <!-- Замените ссылку images/projectX.jpg на свои изображения или добавьте новые -->
           <img src="images/project1-1.jpg" alt="Проект 1 - скриншот 1">
           <img src="images/project1-2.jpg" alt="Проект 1 - скриншот 2">
           <img src="images/project1-3.jpg" alt="Проект 1 - скриншот 3">
@@ -375,6 +269,7 @@
             Начало работы над исследовательским проектом в области Big Data.
           </div>
         </div>
+        <!-- Добавьте ещё события по необходимости -->
       </div>
     </section>
 
@@ -388,8 +283,9 @@
     <!-- РАЗДЕЛ КОНТАКТЫ -->
     <section id="contacts">
       <h2>Контакты</h2>
-      <p>Email: <strong>youremail@example.com</strong></p>
-      <p>Телефон: +7 (999) 123-45-67</p>
+      <p> Email: <strong>youremail@example.com</strong></p>
+      <p> Телефон: +7 (999) 123-45-67</p>
+      <!-- Здесь можно подключить форму обратной связи или ссылки на соц.сети -->
     </section>
   </main>
 
@@ -397,8 +293,7 @@
   <footer>
     <p>© 2023 Ваше имя. Все права защищены.</p>
   </footer>
-
-  <!-- JS СКРИПТЫ -->
+  <!-- СКРИПТЫ JS -->
   <script>
     /****************************************
      *  ФИЛЬТРАЦИЯ ПУБЛИКАЦИЙ
@@ -454,6 +349,5 @@
       showSlide(currentSlide);
     }
   </script>
-
 </body>
 </html>
