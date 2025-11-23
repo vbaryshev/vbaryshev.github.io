@@ -1,0 +1,634 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Baryshev V. V. — Urban Planning & AI Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Urban planning, architecture, spatial analysis and machine learning. Portfolio and research projects of Baryshev V. V.">
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-ru">
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block">
+       <!-- <div class="brand-mark" aria-hidden="true"></div> -->
+        <div class="brand-text">
+          <div class="brand-name">Baryshev V. V.</div>
+          <div class="brand-role">
+            <span data-lang="ru"> Машинное обучение · Городское планирование · Архитектура</span>
+            <span data-lang="en">Machine Learning · Urban planning · Architecture</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main">
+        <a href="#about">
+          <span data-lang="ru">Обо мне</span>
+          <span data-lang="en">About</span>
+        </a>
+        <a href="#projects">
+          <span data-lang="ru">Проекты</span>
+          <span data-lang="en">Projects</span>
+        </a>
+        <a href="#publications">
+          <span data-lang="ru">Публикации</span>
+          <span data-lang="en">Publications</span>
+        </a>
+        <a href="#experience">
+          <span data-lang="ru">Опыт</span>
+          <span data-lang="en">Experience</span>
+        </a>
+        <a href="#education">
+          <span data-lang="ru">Образование</span>
+          <span data-lang="en">Education</span>
+        </a>
+        <a href="#contacts">
+          <span data-lang="ru">Контакты</span>
+          <span data-lang="en">Contacts</span>
+        </a>
+      </nav>
+
+      <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">
+        RU
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Hero / About -->
+    <section id="about" class="section hero">
+      <div class="section-inner hero-inner">
+        <div class="hero-left">
+          <p class="hero-kicker">
+            <span data-lang="ru">Исследователь городской среды и ИИ</span>
+            <span data-lang="en">Urban systems & AI researcher</span>
+          </p>
+          <h1 class="hero-title">
+            <span data-lang="ru">Моделирование городской среды, архитектура и машинное обучение</span>
+            <span data-lang="en">Urban modeling, architecture and machine learning</span>
+          </h1>
+          <p class="hero-text">
+            <span data-lang="ru">
+              Занимаюсь моделированием городской среды, разработкой архитектурных концепций, 
+              пространственным анализом и прикладными ML/DL/RL‑решениями для градостроительства.
+            </span>
+            <span data-lang="en">
+              I work on urban environment modeling, architectural concepts, spatial analytics, 
+              and applied ML/DL/RL solutions for urban planning practice.
+            </span>
+          </p>
+
+          <div class="hero-links">
+            <a class="chip-link chip-primary" href="https://orcid.org/0009-0002-6738-0645" target="_blank" rel="noopener">
+              ORCID: 0009-0002-6738-0645
+            </a>
+            <a class="chip-link" href="https://www.elibrary.ru/author_items.asp?authorid=1209883&show_refs=0&pubrole=100&pubcat=risc" target="_blank" rel="noopener">
+              <span data-lang="ru">Публикации (eLIBRARY)</span>
+              <span data-lang="en">Publications (eLIBRARY)</span>
+            </a>
+            <a class="chip-link" href="https://github.com/vbaryshev/vbaryshev.github.io/cv/B_VV_CV.pdf" target="_blank" rel="noopener">
+              <span data-lang="ru">Резюме (GitHub)</span>
+              <span data-lang="en">CV (GitHub)</span>
+            </a>
+            <a class="chip-link" href="https://github.com/vbaryshev" target="_blank" rel="noopener">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-panel" aria-label="Research focus">
+            <h2 class="hero-panel-title">
+              <span data-lang="ru">Фокус исследований</span>
+              <span data-lang="en">Research focus</span>
+            </h2>
+            <ul class="hero-panel-list">
+              <li>
+                <span data-lang="ru">микромоделирование пешеходных потоков;</span>
+                <span data-lang="en">microsimulation of pedestrian flows;</span>
+              </li>
+              <li>
+                <span data-lang="ru">синтетическое население и пространственные сценарии развития;</span>
+                <span data-lang="en">synthetic populations and spatial development scenarios;</span>
+              </li>
+              <li>
+                <span data-lang="ru">генеративные модели для архитектуры (diffusion + RLHF);</span>
+                <span data-lang="en">generative models for architecture (diffusion + RLHF);</span>
+              </li>
+              <li>
+                <span data-lang="ru">ML/RL‑модели в инструментах градостроительного анализа (QGIS, web).</span>
+                <span data-lang="en">ML/RL models in planning tools (QGIS, web).</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map preview -->
+    <section class="section map-section">
+      <div class="map-header">
+        <div>
+          <h2 class="section-title-compact">
+            <span data-lang="ru">Микромоделирование пешеходных потоков</span>
+            <span data-lang="en">Microsimulation of pedestrian flows</span>
+          </h2>
+          <p>
+            <span data-lang="ru">Интерактивная карта:</span>
+            <span data-lang="en">Interactive map preview:</span>
+          </p>
+        </div>
+      </div>
+      <div class="map-wrapper">
+        <iframe
+          class="map-frame"
+          src="https://vbaryshev.github.io/microsimulation/"
+          loading="lazy"
+          title="Microsimulation of pedestrian flows">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-title-mark"></div>
+            <div>
+              <h2>
+                <span data-lang="ru">Проекты</span>
+                <span data-lang="en">Projects</span>
+              </h2>
+              <p class="section-note">
+                <span data-lang="ru">Выборка текущих и недавних направлений работы.</span>
+                <span data-lang="en">Selected current and recent work directions.</span>
+              </p>
+            </div>
+          </div>
+        </header>
+
+        <div class="projects-grid">
+          <article class="card">
+            <h3>
+              <span data-lang="ru">Генерация и оптимизация архитектурного облика зданий</span>
+              <span data-lang="en">Generation and optimization of building appearance</span>
+            </h3>
+            <p>
+              <span data-lang="ru">
+                Использование диффузионных моделей, обученных методом RLHF, для 
+                генерации и оптимизации фасадов и архитектурных решений 
+                с учётом градостроительных ограничений и контекста городской среды.
+              </span>
+              <span data-lang="en">
+                Using diffusion models trained with RLHF to generate and optimize 
+                facades and architectural solutions under planning constraints 
+                and urban context.
+              </span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span data-lang="ru">ML/RL inference в QGIS</span>
+              <span data-lang="en">ML/RL inference in QGIS</span>
+            </h3>
+            <p>
+              <span data-lang="ru">
+                Разработка приложений и плагинов для QGIS для вывода (inference) 
+                моделей машинного обучения и обучения с подкреплением 
+                в задачах пространственного анализа.
+              </span>
+              <span data-lang="en">
+                Development of applications and QGIS plugins for ML/RL model 
+                inference in spatial analysis workflows.
+              </span>
+            </p>
+            <p class="card-link">
+              <a href="https://github.com/vbaryshev/urbanview" target="_blank" rel="noopener">
+                urbanview (GitHub)
+              </a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span data-lang="ru">Пространственный анализ на Python</span>
+              <span data-lang="en">Spatial analysis in Python</span>
+            </h3>
+            <p>
+              <span data-lang="ru">
+                Jupyter Book по пространственному анализу, моделированию потоков, 
+                работе с геоданными (Python, GeoPandas, PostGIS).
+              </span>
+              <span data-lang="en">
+                Jupyter Book on spatial analysis, flow modeling and geodata 
+                processing (Python, GeoPandas, PostGIS).
+              </span>
+            </p>
+            <p class="card-link">
+              <!-- Замените # на реальную ссылку Jupyter Book -->
+              <a href="#" aria-disabled="true">
+                <span data-lang="ru">Ссылка на Jupyter Book будет добавлена</span>
+                <span data-lang="en">Jupyter Book link to be added</span>
+              </a>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span data-lang="ru">Городское планирование и архитектура</span>
+              <span data-lang="en">Urban planning and architecture</span>
+            </h3>
+            <p>
+              <span data-lang="ru">
+                Архитектурное проектирование, разработка градостроительных концепций, 
+                создание и верификация математических моделей городских процессов.
+              </span>
+              <span data-lang="en">
+                Architectural design, urban planning concepts, and mathematical 
+                models of urban processes.
+              </span>
+            </p>
+            <p class="card-link">
+              <a href="https://disk.yandex.ru/client/disk/Portfolio/%D0%B0%D1%80%D1%85%D0%B8%D0%B2"
+                 target="_blank" rel="noopener">
+                <span data-lang="ru">Портфолио городского планирования и архитектуры</span>
+                <span data-lang="en">Urban planning & architecture portfolio</span>
+              </a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-title-mark"></div>
+            <div>
+              <h2>
+                <span data-lang="ru">Публикации и конференции</span>
+                <span data-lang="en">Publications and conferences</span>
+              </h2>
+            </div>
+          </div>
+        </header>
+
+        <div class="pubs-layout">
+          <div class="pubs-column">
+            <h3 class="section-subtitle">
+              <span data-lang="ru">Статьи</span>
+              <span data-lang="en">Articles</span>
+            </h3>
+            <ul class="list list-accent">
+              <li>
+                <span class="pub-title">MICRO-MODELING OF PEDESTRIAN FLOWS TO TRAFFIC CONCENTRATION POINTS</span><br>
+                <span class="pub-meta">
+                  ARCHITECTURE AND CONSTRUCTION OF RUSSIA, vol. 2, 2024. Baryshev V.V.
+                </span>
+              </li>
+              <li>
+                <span class="pub-title">
+                  THE IMPACT OF REMOTE WORK ON THE ORGANIZATION OF SETTLEMENTS 
+                  AND THE PRINCIPLES OF IMPLEMENTING THE CONCEPT OF A 15-MINUTE CITY IN A METROPOLITAN SUBURB
+                </span><br>
+                <span class="pub-meta">
+                  ARCHITECTURE AND CONSTRUCTION OF RUSSIA, vol. 2, 2024. Markus M.V., Baryshev V.V.
+                </span>
+              </li>
+              <li>
+                <span class="pub-title">SYNTHETIC POPULATIONS IN THE FORMATION OF URBAN AREAS</span><br>
+                <span class="pub-meta">
+                  ARCHITECTURE AND CONSTRUCTION OF RUSSIA, vol. 2, 2023. Baryshev V.V.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pubs-column">
+            <h3 class="section-subtitle">
+              <span data-lang="ru">Конференции</span>
+              <span data-lang="en">Conferences</span>
+            </h3>
+            <ul class="list list-accent">
+              <li>
+                <span class="pub-title">
+                  Forecasting the attendance of public spaces based on the Bayesian network and updated data streams
+                </span><br>
+                <span class="pub-meta">
+                  <span data-lang="ru">
+                    В сб.: Current aspects of urban planning. New Philosophy of Urban Development, 
+                    Москва, Россия, 2025. Baryshev V.V.
+                  </span>
+                  <span data-lang="en">
+                    In: Current aspects of urban planning. New Philosophy of Urban Development, 
+                    Moscow, Russia, 2025. Baryshev V.V.
+                  </span>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="section-note">
+          <span data-lang="ru">
+            Полный список статей и материалов доступен в профиле
+            <a href="https://www.elibrary.ru/" target="_blank" rel="noopener">eLIBRARY</a>.
+          </span>
+          <span data-lang="en">
+            The full list of publications and materials is available in the 
+            <a href="https://www.elibrary.ru/" target="_blank" rel="noopener">eLIBRARY</a> profile.
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-title-mark"></div>
+            <div>
+              <h2>
+                <span data-lang="ru">Опыт</span>
+                <span data-lang="en">Experience</span>
+              </h2>
+            </div>
+          </div>
+        </header>
+
+        <div class="stack">
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>
+                  <span data-lang="ru">Главный специалист по градостроительству</span>
+                  <span data-lang="en">Chief Specialist of Urban Planning</span>
+                </h3>
+                <p class="card-meta">
+                  <span data-lang="ru">Институт Генерального плана Москвы · Москва</span>
+                  <span data-lang="en">Institute of the General Plan of Moscow · Moscow</span>
+                </p>
+              </div>
+              <div class="card-meta">
+                <span data-lang="ru">Январь 2022 — наст. время</span>
+                <span data-lang="en">January 2022 — Ongoing</span>
+              </div>
+            </header>
+            <ul class="list list-compact">
+              <li>
+                <span data-lang="ru">проведение научно-исследовательских работ;</span>
+                <span data-lang="en">scientific research work;</span>
+              </li>
+              <li>
+                <span data-lang="ru">создание доменно-специфичных датасетов перед обучением генеративных SD + LoRA моделей;</span>
+                <span data-lang="en">creation of domain-specific datasets prior to training generative SD + LoRA models;</span>
+              </li>
+              <li>
+                <span data-lang="ru">обработка данных и геолокаций, построение и оркестрация ETL‑процессов;</span>
+                <span data-lang="en">data and geo‑location processing, design and orchestration of ETL pipelines;</span>
+              </li>
+              <li>
+                <span data-lang="ru">проектирование и программирование пространственных БД PostgreSQL/PostGIS (концептуальная, логическая, физическая модели);</span>
+                <span data-lang="en">design and development of PostgreSQL/PostGIS spatial databases (conceptual, logical, physical models);</span>
+              </li>
+              <li>
+                <span data-lang="ru">разработка клиентских приложений к БД (PyQt, PyQGIS);</span>
+                <span data-lang="en">development of database client applications (PyQt, PyQGIS);</span>
+              </li>
+              <li>
+                <span data-lang="ru">разработка плагинов для QGIS;</span>
+                <span data-lang="en">development of QGIS plugins;</span>
+              </li>
+              <li>
+                <span data-lang="ru">веб-разработка и веб-картография;</span>
+                <span data-lang="en">web application development and web mapping;</span>
+              </li>
+              <li>
+                <span data-lang="ru">создание API, в том числе для интеграции с плагинами QGIS;</span>
+                <span data-lang="en">creation of programming APIs, including integration with QGIS plugins;</span>
+              </li>
+              <li>
+                <span data-lang="ru">математическое моделирование транспортных и пешеходных потоков;</span>
+                <span data-lang="en">mathematical modeling of traffic and pedestrian flows;</span>
+              </li>
+              <li>
+                <span data-lang="ru">подготовка аналитических отчётов, моделирование и прогнозирование;</span>
+                <span data-lang="en">preparation of analytical reports, modeling and forecasting;</span>
+              </li>
+              <li>
+                <span data-lang="ru">разработка моделей машинного обучения (классический ML, DL, RL);</span>
+                <span data-lang="en">development of machine learning models (classical ML, DL, RL);</span>
+              </li>
+              <li>
+                <span data-lang="ru">внедрение моделей (inference, мониторинг);</span>
+                <span data-lang="en">model deployment (inference, model monitoring);</span>
+              </li>
+              <li>
+                <span data-lang="ru">участие в разработке и тестировании корпоративных ПО-продуктов (плагины, отдельные приложения);</span>
+                <span data-lang="en">participation in the development and testing of corporate software products (plugins, standalone apps);</span>
+              </li>
+              <li>
+                <span data-lang="ru">разработка методологий, публикация статей, участие в конференциях;</span>
+                <span data-lang="en">methodology development, scientific publications, conference participation;</span>
+              </li>
+              <li>
+                <span data-lang="ru">поддержка деятельности производственных подразделений.</span>
+                <span data-lang="en">support of production units in analytics and modeling.</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>
+                  <span data-lang="ru">Архитектор / Ведущий архитектор</span>
+                  <span data-lang="en">Architect / Lead Architect</span>
+                </h3>
+                <p class="card-meta">
+                  <span data-lang="ru">Группа компаний ПИК и другие компании · Москва</span>
+                  <span data-lang="en">PIK Group and other companies · Moscow</span>
+                </p>
+              </div>
+              <div class="card-meta">
+                <span>2008 — 2022</span>
+              </div>
+            </header>
+            <ul class="list list-compact">
+              <li>
+                <span data-lang="ru">градостроительное проектирование и мастер-планы;</span>
+                <span data-lang="en">urban planning and master planning;</span>
+              </li>
+              <li>
+                <span data-lang="ru">разработка архитектурных концепций;</span>
+                <span data-lang="en">development of architectural concepts;</span>
+              </li>
+              <li>
+                <span data-lang="ru">разработка и сопровождение BIM‑шаблонов, координация разделов;</span>
+                <span data-lang="en">BIM templates development and coordination of disciplines;</span>
+              </li>
+              <li>
+                <span data-lang="ru">рабочая документация по архитектуре;</span>
+                <span data-lang="en">architectural working documentation;</span>
+              </li>
+              <li>
+                <span data-lang="ru">архитектура интерьеров и авторский надзор.</span>
+                <span data-lang="en">interior architecture and authors’ supervision.</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-title-mark"></div>
+            <div>
+              <h2>
+                <span data-lang="ru">Образование</span>
+                <span data-lang="en">Education</span>
+              </h2>
+            </div>
+          </div>
+        </header>
+
+        <div class="stack">
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>
+                  <span data-lang="ru">Магистр, прикладная математика и информатика</span>
+                  <span data-lang="en">M.Sc., Applied Mathematics and Computer Science</span>
+                </h3>
+                <p class="card-meta">
+                  National Research Nuclear University “MEPhI”
+                </p>
+              </div>
+              <div class="card-meta">
+                <span>Sept 2024 — June 2026</span>
+              </div>
+            </header>
+            <p class="section-note">
+              <span data-lang="ru">
+                Тема магистерской работы: генерация и оптимизация архитектурного облика зданий 
+                с использованием диффузионных моделей, обученных методом RLHF.
+              </span>
+              <span data-lang="en">
+                Thesis: Generation and optimization of the architectural appearance of buildings 
+                using diffusion models trained by the RLHF method.
+              </span>
+            </p>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>
+                  <span data-lang="ru">Специалитет, архитектура</span>
+                  <span data-lang="en">Specialist, Architecture</span>
+                </h3>
+                <p class="card-meta">
+                  <span data-lang="ru">Государственный университет по землеустройству</span>
+                  <span data-lang="en">State University of Land Management</span>
+                </p>
+              </div>
+              <div class="card-meta">
+                <span>Sept 2007 — June 2011</span>
+              </div>
+            </header>
+          </article>
+
+          <article class="card">
+            <header class="card-header">
+              <div>
+                <h3>
+                  <span data-lang="ru">Специалитет, менеджмент организаций</span>
+                  <span data-lang="en">Specialist, Management of Organizations</span>
+                </h3>
+                <p class="card-meta">
+                  <span data-lang="ru">Московский государственный университет дизайна и технологии</span>
+                  <span data-lang="en">Moscow State University of Design and Technology</span>
+                </p>
+              </div>
+              <div class="card-meta">
+                <span>Sept 2002 — June 2007</span>
+              </div>
+            </header>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contacts" class="section">
+      <div class="section-inner">
+        <header class="section-header">
+          <div class="section-title-wrap">
+            <div class="section-title-mark"></div>
+            <div>
+              <h2>
+                <span data-lang="ru">Контакты</span>
+                <span data-lang="en">Contacts</span>
+              </h2>
+            </div>
+          </div>
+        </header>
+
+        <div class="contact-layout">
+          <div>
+            <ul class="list list-accent">
+              <li>
+                <strong>Email:</strong>
+                <!-- Замените на реальный email -->
+                <a href="mailto:vjcheslavl@gmail.com">vjcheslavl@gmail.com</a>
+              </li>
+              <li>
+                <strong>Telegram:</strong>
+                <!-- Замените на реальный ник -->
+                <a href="https://t.me/your_telegram" target="_blank" rel="noopener">@Viyacheslavv</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p class="section-note">
+              <span data-lang="ru">
+                Открыт к научным и прикладным коллаборациям в области моделирования городской среды, 
+                пространственной аналитики и внедрения ML/RL‑решений в градостроительную практику.
+              </span>
+              <span data-lang="en">
+                Open to research and applied collaborations in urban modeling, spatial analytics, 
+                and ML/RL solutions for urban planning practice.
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© <span id="year"></span> Baryshev V. V.</span>
+      <span class="footer-meta">
+        <span data-lang="ru">HTML · CSS · JS</span>
+        <span data-lang="en">HTML · CSS · JS</span>
+      </span>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
+
